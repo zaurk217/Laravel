@@ -11,32 +11,16 @@
 |
 */
 
-Route::get('/tasks', 'TasksController@index');
-Route::get('/tasks/{task}', 'TasksController@show');
-Route::get('/', 'PostsController@index');
-Route::get('/posts/{post}', 'PostsController@show');
 
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/tasks', function () {
-	//$tasks = DB::table('tasks')->get();
-    //$tasks = App\Task::all();
-    //$tasks = App\Task::incomplete();
-    //return view('tasks.index', compact('tasks'));
-//});
+Auth::routes();
 
-//Route::get('/tasks/{task}', function ($id) {
-	//$task = DB::table('tasks')->find($id);
-    //$task = App\Task::find($id);
-    //return view('tasks.show', compact('task'));
-//});
+Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/hello', function () {
-    //$tasks = [
-    	//'Add Task',
-    	//'Find Task',
-    	//'Review Task',
-    //];
-   //	return view ('hello', compact('tasks'));
-//});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
